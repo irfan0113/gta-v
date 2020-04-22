@@ -1,6 +1,6 @@
 import numpy as np
 from PIL import ImageGrab
-from cv2 import cv2
+import cv2
 import time
 
 def screen_record(): 
@@ -12,4 +12,5 @@ def screen_record():
         last_time = time.time()
         cv2.imshow('window',cv2.cvtColor(printscreen, cv2.COLOR_BGR2RGB))
         if cv2.waitKey(25) & 0xFF == ord('q'):
-            cv2.destroyA
+            cv2.destroyAllWindows()
+            break
